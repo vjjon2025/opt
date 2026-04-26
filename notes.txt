@@ -1,0 +1,38 @@
+E.g. take f (x) = |x|
+Then, f (x) = sgn(x) and x+ = x − ηsgn(x)
+
+L10: GD:
+xk+1 = xk − ηk * GRADf(xk )
+
+Lipscitz: How should ηt be chosen?
+If f (.) is M-Lipschitz,  - eta < 1/M
+
+
+Exact Line search:
+ηt = argmin(over eta) f(xt − ηdt )
+ f(xt − ηdt ) - is convex fn of η - 
+ xt+1 = xt - ηdt
+
+When f is convex,
+f (y ) ≥ f (x) + GRADf (x)T (y − x)
+T: transpose
+f (x − ηd ) ≥ f (x) − η GRAD f(x)T d
+
+choose small ALPHA and ETA so that 
+f (x − ηd ) <= f (x) − (ALPHA)*η GRAD f(x)T d
+
+BTLS:
+while f (x − ηd ) ≥ f (x) − (ALPHA)*η GRAD f(x)T d
+   ETA = ETA*BETA
+BETA < 1; ALPHA < 0.5
+
+
+IF M-SMOOTH:
+f (x+) ≤ f (x) − αβ/M ||GRAD f (x)|| 2
+
+BTLS: FINDS friends
+
+LIPSCITZ
+||GRAD f (x) − GRAD f (y )|| ≤ M||x − y || ∀x, y
+
+UPPER BOUND:
